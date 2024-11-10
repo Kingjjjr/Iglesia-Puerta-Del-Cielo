@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iglesia Puerta del Cielo</title>
+    <style>
+        /* Fondo degradado y tipografía general */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0d0d0d, #000000);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Encabezado con efecto neón */
+        header {
+            padding: 20px;
+            background-color: #0d0d0d;
+            border-bottom: 4px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(255, 251, 0, 0.5);
+            color: #e0e0e0;
+            position: relative;
+            text-shadow: 0 0 10px #ffd000, 0 0 20px #ffd000;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #fffb00;
+            margin: 0;
+            text-shadow: 0 0 10px #ffd000, 0 0 20px #ffd000;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Secciones con borde y sombra neón */
+        .section {
+            background-color: #1f1f1f;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 192, 2, 0.2);
+            box-shadow: 0 0 15px #ffd000(77, 184, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+            transform: scale(0.95);
+            opacity: 0;
+            animation: fadeInUp 1.2s ease forwards;
+        }
+
+        /* Títulos con estilo de luz neón */
+        h2 {
+            color: #ffd000;
+            font-size: 1.8em;
+            text-shadow: 0 0 5px #ffd000, 0 0 10px #ffd000;
+            margin-bottom: 15px;
+        }
+
+        /* Botón de ubicación con efecto neón */
+        .location-button {
+            background-color: #ffd000;
+            color: #1a1a1a;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 0 15px #ffd000(77, 184, 255, 0.8);
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .location-button:hover {
+            background-color: #ffd000;
+            box-shadow: 0 0 20px #ffd000(77, 184, 255, 1), 0 0 30px rgb(255, 238, 0);
+            transform: scale(1.05);
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Aparición de secciones al hacer scroll */
+        .section-visible {
+            transform: scale(1);
+            opacity: 1;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .container {
+                padding: 10px;
+            }
+            .section {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            .location-button {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+    <script>
+        // Efecto de aparición en el desplazamiento
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".section");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("section-visible");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Puerta Del Cielo</h1>
+        <p>Bienvenidos a la página oficial de nuestra iglesia</p>
+    </header>
+    
+    <div class="container">
+        
+        <!-- Información sobre la iglesia -->
+        <section class="section">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos una comunidad con 18 años de experiencia dedicada a la fe y al servicio. Nos reunimos cada semana para adorar y servir a la comunidad.</p>
+        </section>
+
+        <!-- Sección de evento -->
+        <section class="section">
+            <h2>Próximo Evento</h2>
+            <p><strong>Aniversario XVIII de la iglesia</strong></p>
+            <p>Fecha: 10 de Noviembre, 2024</p>
+            <p>Hora: 10:00 AM</p>
+            <p>Ubicación: En la Iglesia</p>
+            <p>Te invitamos a participar en nuestro evento especial de celebración. ¡Todos son bienvenidos!</p>
+        </section>
+
+        <!-- Ubicación de la iglesia -->
+        <section class="section">
+            <h2>Ubicación</h2>
+            <p>Nos encontramos en: Calle Av. décima No. 351, Saltillo Coahuila, México</p>
+            <a href="https://maps.app.goo.gl/x2DYJL7tGeFFEEJo9" target="_blank" class="location-button">Ver en Google Maps</a>
+        </section>
+   
+    </div>
+</body>
+</html>
