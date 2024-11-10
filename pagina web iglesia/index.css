@@ -1,0 +1,114 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Fondo negro */
+    color: #d4af37; /* Dorado elegante */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: #d4af37;
+    padding: 20px;
+    border-bottom: 2px solid #d4af37;
+    animation: fadeInDown 1.2s ease;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #d4af37;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.section {
+    background-color: #262626; /* Fondo gris oscuro */
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1.2s ease;
+    color: #d4af37;
+}
+
+/* Estilo para el título de secciones */
+h2 {
+    color: #d4af37;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Botón de ubicación */
+.location-button {
+    background-color: #d4af37;
+    color: #1a1a1a;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.location-button:hover {
+    background-color: #c89f34; /* Dorado oscuro */
+    transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .section {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .location-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
